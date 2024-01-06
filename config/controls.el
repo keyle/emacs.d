@@ -38,6 +38,7 @@
 (global-set-key (kbd "M-[") 'previous-buffer) ; navigation back and forth
 (global-set-key (kbd "M-]") 'next-buffer)
 
+
 ;; settings
 
 (defun open-config ()
@@ -46,6 +47,22 @@
   (find-file "~/.emacs.d/config/main.el"))
 
 (global-set-key (kbd "M-,") 'open-config)
+
+
+;; clear recent file buffer list history
+
+(defun clear-recentf-list ()
+  "Clear the recent files list."
+  (interactive)
+  (setq desktop-buffer-mode-handlers nil)
+  (desktop-clear)
+  (delete-file (expand-file-name "~/.emacs.d/emacs.desktop"))
+  (desktop-save-mode 1)
+  (message "Cleared recent file list and desktop"))
+
+
+(global-set-key (kbd "M-0") 'clear-recentf-list)
+
 
 
 ;; swap pane
@@ -246,15 +263,7 @@
 
 ;; open terminal
 
-(defun open-terminal-in-new-window ()
-  "Open a new terminal in a new window."
-  (interactive)
-  (let ((buffer (ansi-term (getenv "SHELL"))))
-    (switch-to-buffer (other-buffer buffer))
-    (switch-to-buffer-other-window buffer)))
-
-(global-set-key (kbd "M-;") 'open-terminal-in-new-window)
-
+(global-set-key (kbd "M-;") 'eshell)
 
 
 ;;  counsel interface for fd

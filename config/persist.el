@@ -20,6 +20,11 @@
 (add-hook 'kill-emacs-hook 'desktop-save-in-desktop-dir)
 
 
+;; only restore/reload the buffer of the last X 
+
+(setq desktop-restore-eager 5)
+
+
 ;; restore window size onload 
 
 (defun restore-frame-geometry ()

@@ -50,6 +50,9 @@
 (setq-default window-divider-default-places 'right-only)
 (window-divider-mode 1)
 
+;; term
+
+;; TODO vterm crashes on compile
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; header-line ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
