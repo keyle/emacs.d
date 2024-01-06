@@ -36,7 +36,6 @@
   :config)
 
 ;; python LSP
-
 (use-package lsp-pyright
   :ensure t
   :hook (python-mode . (lambda ()
@@ -54,10 +53,22 @@
   :mode "\\.lua\\'")
 
 
+;; remember cursor position
+
+(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file "~/.emacs.d/saved-places")
+
+
+;; end of file line
+
+(setq-default require-final-newline t)
+
+
 ;; separator for panes
 
-(setq window-divider-default-right-width 1)
-(setq window-divider-default-places 'right-only)
+(setq-default window-divider-default-right-width 1)
+(setq-default window-divider-default-places 'right-only)
 (window-divider-mode 1)
 
 

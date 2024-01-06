@@ -26,14 +26,43 @@
   (kill-emacs))
 
 (global-set-key [?\M-q] 'force-quit)
-; (global-set-key (kbd "M-w") 'kill-buffer)
+
 (global-set-key (kbd "M-w") 'delete-window)
-(global-set-key (kbd "M-t") 'find-file)
-(global-set-key (kbd "M-[") 'previous-buffer)
+(global-set-key (kbd "M-W") 'delete-other-windows)
+
+
+;; (defun enlargewindow ()
+  
+;; (enlarge-window-horizontally 1)
+;; (enlarge-window-vertically 1)
+;;   )
+
+
+(global-set-key (kbd "M-+") 'enlarge-window-horizontally)
+;; (global-set-key (kbd "M-+") 'enlargewindow)
+
+(global-set-key (kbd "M-t") 'find-file) ; new "tab" or pane
+
+(global-set-key (kbd "M-[") 'previous-buffer) ; navigation back and forth
 (global-set-key (kbd "M-]") 'next-buffer)
+
+
+(global-set-key (kbd "M-j") 'choose-window)
+
+;; swap pane
+
+(require 'window-jump)
+(use-package window-jump
+             :bind (("C-x <up>" . window-jump-up)
+                    ("C-x <down>" . window-jump-down)
+                    ("M-{" . window-jump-left)
+                    ("M-}" . other-window)))
+
 (global-set-key (kbd "M-z") 'undo)           ; Meta-z for undo
 (global-set-key (kbd "M-Z") 'undo-redo)      ; Meta-Z for redo (Emacs 28+)
+
 (global-set-key (kbd "M-\\") 'split-window-right)  ; Meta-\ for vertical split
+(global-set-key (kbd "M-|") 'split-window-below)  ; Meta-| for vertical split
 
 (global-set-key (kbd "M-s") 'save-buffer)           ; Meta-s save
 (global-set-key (kbd "M-p") 'execute-extended-command) ; Meta-p commands
@@ -70,23 +99,30 @@
 (global-set-key (kbd "A-<down>") 'move-line-down)
 
 
+;; make ALT-shift-LEFT/RIGHT do word selection
+
+;; (global-set-key (kbd "A-<left>") 'left-word)
+;; (global-set-key (kbd "A-<right>") 'right-word)
+
+
+
 ;; multiple cursor search:
 
-(defun select-next-word ()
-  "Extend the selection to the next word."
-  (interactive)
-  (if (use-region-p)
-      (goto-char (region-end))
-    (set-mark (point)))
-  (forward-word))
+;; (defun select-next-word ()
+;;   "Extend the selection to the next word."
+;;   (interactive)
+;;   (if (use-region-p)
+;;       (goto-char (region-end))
+;;     (set-mark (point)))
+;;   (forward-word))
 
-(defun select-previous-word ()
-  "Extend the selection to the previous word."
-  (interactive)
-  (if (use-region-p)
-      (goto-char (region-beginning))
-    (set-mark (point)))
-  (backward-word))
+;; (defun select-previous-word ()
+;;   "Extend the selection to the previous word."
+;;   (interactive)
+;;   (if (use-region-p)
+;;       (goto-char (region-beginning))
+;;     (set-mark (point)))
+;;   (backward-word))
 
 
 ;; comment
@@ -120,7 +156,12 @@
 (global-set-key (kbd "M-d") 'duplicate-line-or-region)
 
 
-(global-set-key (kbd "TAB") 'dabbrev-expand)
+;; tabs
+(setq-default indent-tabs-mode nil)
+
+
+
+;; (global-set-key (kbd "<tab>") (insert "\t"))
 
 (defun cut-region-or-line ()
   "Kill the active region or the current line if no region is active."

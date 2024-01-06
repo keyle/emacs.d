@@ -2,7 +2,6 @@
 
 ;; I currently use badger
 
-
 (defun my/apply-theme (appearance)
   "Load theme, taking current system APPEARANCE into consideration."
   (mapc #'disable-theme custom-enabled-themes)
@@ -31,6 +30,7 @@
 ;; overwrite the bottom bar
 
 ;; mode line (bottom line)
+
 ;; hide mode-line
 ;; (setq mode-line-format nil)		
 
