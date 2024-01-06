@@ -1,0 +1,49 @@
+# Emacs backup files
+*~
+
+icons
+*.png
+
+# Auto-save files
+\#*\#
+.*.swp
+saved-places
+frame-geometry
+
+# Byte-compiled files
+*.elc
+
+# Auto-generated custom file (if you use a separate file for custom-set-variables)
+custom.el
+
+# Bookmarks
+bookmarks
+
+# Recent files
+recentf
+
+.lsp-session*
+projects
+
+# Projectile files
+projectile-bookmarks.eld
+projectile.cache
+
+cache
+*.cache
+
+# eshell files
+eshell/history
+eshell/lastdir
+
+# Tramp history
+tramp
+
+# Org-mode
+*.org-id-locations
+*org-clock-save.el
+
+# Other various Emacs temp files
+.*~
+*\#
+
