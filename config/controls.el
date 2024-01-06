@@ -22,7 +22,6 @@
 (defun force-quit ()
   "Quit Emacs immediately without saving."
   (interactive)
-  (save-frame-geometry)
   (kill-emacs))
 
 (global-set-key (kbd "M-q") 'force-quit)
@@ -272,12 +271,11 @@
 (defvar counsel-fd-command "fd --hidden --color never "
   "Base command for fd.")
 
+
+(require 'dired-x)
+
 ;;;###autoload
 (defun counsel-fd-dired-jump (&optional initial-input initial-directory)
-  "Jump to a directory (in dired) below the current directory.
-List all subdirectories within the current directory.
-INITIAL-INPUT can be given as the initial minibuffer input.
-INITIAL-DIRECTORY, if non-nil, is used as the root directory for search."
   (interactive
    (list nil
          (when current-prefix-arg
@@ -327,3 +325,17 @@ INITIAL-DIRECTORY, if non-nil, is used as the root directory for search."
   (load-file "~/.emacs"))
 
 (global-set-key (kbd "<f12>") 'reload-init-file)
+
+
+;; projects
+
+
+(defun open-projects ()
+  (interactive)
+  (find-file "~/Code")
+  (counsel-fd-dired-jump))
+
+(global-set-key (kbd "M-P") 'open-projects)
+
+
+

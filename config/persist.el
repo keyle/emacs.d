@@ -20,12 +20,12 @@
 (add-hook 'kill-emacs-hook 'desktop-save-in-desktop-dir)
 
 
-;; only restore/reload the buffer of the last X 
+;; only restore/reload history the buffer of the last X
 
-(setq desktop-restore-eager 5)
+(setq desktop-restore-eager 7)
 
 
-;; restore window size onload 
+;; restore window size onload
 
 (defun restore-frame-geometry ()
   (let ((geometry-file (expand-file-name "~/.emacs.d/frame-geometry")))
