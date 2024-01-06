@@ -40,6 +40,6 @@
 ;;  '(mode-line-active ((t (:background "#002233" :foreground "#CCCCCC")))))
 
 (custom-set-faces
- '(mode-line-active ((t (:foreground "#bbbbbb" :background "DarkBlue"))))
+ '(mode-line-active ((t (:foreground "#bbbbbb" :background "#313E31"))))
  '(mode-line-inactive ((t (:foreground "#444444" :background "#222222" )))))
 

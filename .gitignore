@@ -33,6 +33,7 @@ projectile.cache
 
 cache
 *.cache
+lsp-cache
 
 # eshell files
 eshell/history

@@ -38,6 +38,15 @@
 (global-set-key (kbd "M-[") 'previous-buffer) ; navigation back and forth
 (global-set-key (kbd "M-]") 'next-buffer)
 
+;; settings
+
+(defun open-config ()
+  "Open my Emacs configuration file."
+  (interactive)
+  (find-file "~/.emacs.d/config/main.el"))
+
+(global-set-key (kbd "M-,") 'open-config)
+
 
 ;; swap pane
 
@@ -223,7 +232,7 @@
 (global-set-key (kbd "<f6>") 'recompile)
 
 ;; (global-set-key (kbd "<f1>") 'imenu)
-(global-set-key (kbd "<f6>") 'find-file-in-project)
+;; (global-set-key (kbd "<f6>") 'find-file-in-project)
 
 (global-set-key (kbd "M-f") 'isearch-forward) ; find - swiper
 (global-set-key (kbd "<f3>") 'isearch-query-replace) 
@@ -234,15 +243,21 @@
 
 (global-set-key (kbd "M-F") 'counsel-rg) ; ripgrep
 
-;; replace
 
+;; open terminal
 
+(defun open-terminal-in-new-window ()
+  "Open a new terminal in a new window."
+  (interactive)
+  (let ((buffer (ansi-term (getenv "SHELL"))))
+    (switch-to-buffer (other-buffer buffer))
+    (switch-to-buffer-other-window buffer)))
+
+(global-set-key (kbd "M-;") 'open-terminal-in-new-window)
 
 
 
 ;;  counsel interface for fd
-
-;;; Code:
 (require 'counsel)
 
 (defvar counsel-fd-command "fd --hidden --color never "
