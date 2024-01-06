@@ -25,7 +25,7 @@
   (save-frame-geometry)
   (kill-emacs))
 
-(global-set-key [?\M-q] 'force-quit)
+(global-set-key (kbd "M-q") 'force-quit)
 
 (global-set-key (kbd "M-w") 'delete-window)
 (global-set-key (kbd "M-W") 'delete-other-windows)

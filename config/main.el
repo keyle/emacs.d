@@ -58,9 +58,13 @@
   :mode "\\.lua\\'")
 
 
-
-
 ;; (setq lsp-clients-clangd-args '("--query-driver=/usr/bin/arm-none-eabi-gcc" "--log=verbose"))
+
+(require 'lsp-ui)
+(add-hook 'lsp-mode-hook 'lsp-ui-mode)
+(setq-default lsp-ui-sideline-enable t)
+(setq-default lsp-ui-sideline-show-diagnostics t)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 
 ;; remember cursor position
