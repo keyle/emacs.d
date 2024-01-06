@@ -30,14 +30,6 @@
 (global-set-key (kbd "M-w") 'delete-window)
 (global-set-key (kbd "M-W") 'delete-other-windows)
 
-
-;; (defun enlargewindow ()
-  
-;; (enlarge-window-horizontally 1)
-;; (enlarge-window-vertically 1)
-;;   )
-
-
 (global-set-key (kbd "M-+") 'enlarge-window-horizontally)
 ;; (global-set-key (kbd "M-+") 'enlargewindow)
 
@@ -46,8 +38,6 @@
 (global-set-key (kbd "M-[") 'previous-buffer) ; navigation back and forth
 (global-set-key (kbd "M-]") 'next-buffer)
 
-
-(global-set-key (kbd "M-j") 'choose-window)
 
 ;; swap pane
 
@@ -74,6 +64,15 @@
 (define-key lsp-mode-map (kbd "M-g") 'lsp-find-definition)     ; Meta-g for go to definition
 (define-key lsp-mode-map (kbd "M-G") 'lsp-find-implementation) ; Meta-G for list implementations
 (global-set-key (kbd "M-r") 'lsp-rename)                        ; LSP rename
+
+
+(global-set-key (kbd "A-e") 'lsp-format-buffer)
+
+;; LSP format on save
+
+(setq lsp-enable-on-type-formatting nil)
+(add-hook 'before-save-hook 'lsp-format-buffer)
+
 
 
 ;; Clangd show the warnings on hover
@@ -156,12 +155,9 @@
 (global-set-key (kbd "M-d") 'duplicate-line-or-region)
 
 
-;; tabs
+;; TAB tabs
 (setq-default indent-tabs-mode nil)
 
-
-
-;; (global-set-key (kbd "<tab>") (insert "\t"))
 
 (defun cut-region-or-line ()
   "Kill the active region or the current line if no region is active."

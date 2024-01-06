@@ -12,7 +12,13 @@
       (insert (prin1-to-string frame-geometry))
       (write-file (expand-file-name "~/.emacs.d/frame-geometry")))))
 
+
 (add-hook 'kill-emacs-hook 'save-frame-geometry)
+
+;; save desktop panes
+
+(add-hook 'kill-emacs-hook 'desktop-save-in-desktop-dir)
+
 
 ;; restore window size onload 
 

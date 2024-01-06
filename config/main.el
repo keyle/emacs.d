@@ -4,14 +4,19 @@
 (setq ring-bell-function 'ignore) ; turn off beeps
 (setq make-backup-files nil) ; no backup file~
 
+(setq desktop-dirname             "~/.emacs.d/"
+      desktop-base-file-name      "emacs.desktop"
+      desktop-base-lock-name      "lock"
+      desktop-path                (list desktop-dirname)
+      desktop-save                t
+      desktop-files-not-to-save   "^$" ;reload tramp paths
+      desktop-load-locked-desktop nil
+      desktop-auto-save-timeout   30)
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-)
+(setq use-layouts t)
 
+(require 'desktop)
+(desktop-save-mode 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; packages ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -51,6 +56,11 @@
 (use-package lua-mode
   :ensure t
   :mode "\\.lua\\'")
+
+
+
+
+;; (setq lsp-clients-clangd-args '("--query-driver=/usr/bin/arm-none-eabi-gcc" "--log=verbose"))
 
 
 ;; remember cursor position

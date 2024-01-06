@@ -9,6 +9,7 @@ icons
 .*.swp
 saved-places
 frame-geometry
+emacs.desktop
 
 # Byte-compiled files
 *.elc
@@ -21,6 +22,7 @@ bookmarks
 
 # Recent files
 recentf
+lock
 
 .lsp-session*
 projects
