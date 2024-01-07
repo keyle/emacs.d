@@ -34,7 +34,7 @@
 (global-set-key (kbd "M-+") 'enlarge-window-horizontally)
 ;; (global-set-key (kbd "M-+") 'enlargewindow)
 
-(global-set-key (kbd "M-t") 'find-file) ; new "tab" or pane
+(global-set-key (kbd "M-t") 'find-file-other-window) ; new "tab" or pane
 
 (global-set-key (kbd "M-[") 'previous-buffer) ; navigation back and forth
 (global-set-key (kbd "M-]") 'next-buffer)
@@ -108,6 +108,17 @@
 (global-set-key (kbd "M-r") 'lsp-rename)                        ; LSP rename
 
 (global-set-key (kbd "M-l") 'goto-line)
+
+;; show hide line numbers
+(defun toggle-line-numbers ()
+  "Toggle line numbers on and off."
+  (interactive)
+  (if (bound-and-true-p display-line-numbers-mode)
+      (global-display-line-numbers-mode -1)
+    (global-display-line-numbers-mode 1)))
+
+(global-set-key (kbd "M-L") 'toggle-line-numbers)
+
 
 (global-set-key (kbd "A-e") 'lsp-format-buffer)
 
@@ -252,6 +263,15 @@
 
 (use-package counsel
   :ensure t)
+
+(use-package ivy
+  :ensure t)
+
+(use-package lsp-ivy
+  :ensure t)
+
+(global-set-key (kbd "M-t") 'lsp-ivy-workspace-symbol)
+
 
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)

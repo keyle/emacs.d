@@ -1,5 +1,4 @@
 ;; (add-to-list 'default-frame-alist '(undecorated-round . t))
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (delete-selection-mode 1) ; delete selection when I overwrite selection
 (setq ring-bell-function 'ignore) ; turn off beeps
 (setq make-backup-files nil) ; no backup file~
@@ -17,6 +16,13 @@
 
 (require 'desktop)
 (desktop-save-mode 1)
+
+;; enable line numbers in programming modes
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+;; turn off scroll bars
+(scroll-bar-mode -1)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; packages ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -50,7 +56,6 @@
 (setq-default window-divider-default-places 'right-only)
 (window-divider-mode 1)
 
-;; term
 
 ;; TODO vterm crashes on compile
 
