@@ -53,3 +53,14 @@
  '(mode-line-active ((t (:foreground "#151515" :background "#928771"))))
  '(mode-line-inactive ((t (:foreground "#444444" :background "#222222" )))))
 
+
+;;;;;;;;;;;;;;;;;;;;; divider ;;;;;;;;;;;;;;;;;;;;;;
+
+(set-face-foreground 'vertical-border "red")
+(set-face-background 'vertical-border "red")
+
+(window-divider-mode 1)
+(setq window-divider-default-right-width 1)
+(setq window-divider-default-bottom-width 0)
+(setq-default window-divider-default-places 'right-only)
+

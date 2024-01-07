@@ -18,7 +18,7 @@
 (desktop-save-mode 1)
 
 ;; enable line numbers in programming modes
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+;; (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; turn off scroll bars
 (scroll-bar-mode -1)
@@ -52,10 +52,6 @@
 
 ;; separator for panes
 
-(setq-default window-divider-default-right-width 1)
-(setq-default window-divider-default-places 'right-only)
-(window-divider-mode 1)
-
 
 ;; TODO vterm crashes on compile
 
@@ -73,12 +69,12 @@
 
 ;; These is the default value, but I keep it here for visiibility.
 (setq spacious-padding-widths
-      '( :internal-border-width 20
-         :header-line-width 1
+      '( :internal-border-width 35
+         :header-line-width 4
          :mode-line-width 1
          :tab-width 4
-         :right-divider-width 1
-         :scroll-bar-width 2))
+         :right-divider-width 4
+         :scroll-bar-width 10))
 
 ;; Read the doc string of `spacious-padding-subtle-mode-line' as it
 ;; is very flexible and provides several examples.
@@ -92,6 +88,8 @@
 
 
 (load "~/.emacs.d/config/theme.el")
+
+
 
 
 ;; Remap keys for macOS and mousewheel
