@@ -32,9 +32,13 @@
 (global-set-key (kbd "M-W") 'delete-other-windows)
 
 (global-set-key (kbd "M-+") 'enlarge-window-horizontally)
-;; (global-set-key (kbd "M-+") 'enlargewindow)
 
-(global-set-key (kbd "M-t") 'find-file-other-window) ; new "tab" or pane
+(defun open-blank-window ()
+  "Open a new blank buffer."
+  (interactive)
+  (switch-to-buffer (generate-new-buffer "untitled")))
+
+;; (global-set-key (kbd "M-t") 'open-blank-window) ; use M-R type a name
 
 (global-set-key (kbd "M-[") 'previous-buffer) ; navigation back and forth
 (global-set-key (kbd "M-]") 'next-buffer)
@@ -161,6 +165,14 @@
 
 ;; multiple cursor search:
 
+(use-package multiple-cursors
+  :ensure t)
+
+
+(global-set-key (kbd "M-<up>") 'mc/mark-previous-like-this)
+(global-set-key (kbd "M-<down>") 'mc/mark-next-like-this)
+
+
 ;; (defun select-next-word ()
 ;;   "Extend the selection to the next word."
 ;;   (interactive)
@@ -212,6 +224,8 @@
 
 ;; TAB tabs
 (setq-default indent-tabs-mode nil)
+(setq tab-always-indent 'complete)
+
 
 
 (defun cut-region-or-line ()

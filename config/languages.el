@@ -19,6 +19,7 @@
                           (require 'lsp-pyright)
                           (lsp))))  ; or lsp-deferred
 
+
 (use-package go-mode
   :ensure t)
 
@@ -35,6 +36,10 @@
 (add-hook 'lsp-mode-hook 'lsp-ui-mode)
 (setq-default lsp-ui-sideline-enable t)
 (setq-default lsp-ui-sideline-show-diagnostics t)
+
+(add-hook 'c-mode-hook (lambda ()
+                         (setq c-basic-offset 4) ; important to get 4 spaces on enter
+                         ))
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
