@@ -37,4 +37,3 @@
         (set-frame-size (selected-frame) (nth 2 frame-geometry) (nth 3 frame-geometry) )))))
 
 (add-hook 'after-init-hook 'restore-frame-geometry)
-

@@ -76,8 +76,23 @@
 (global-set-key (kbd "M-z") 'undo)           ; Meta-z for undo
 (global-set-key (kbd "M-Z") 'undo-redo)      ; Meta-Z for redo (Emacs 28+)
 
-(global-set-key (kbd "M-\\") 'split-window-right)  ; Meta-\ for vertical split
-(global-set-key (kbd "M-|") 'split-window-below)  ; Meta-| for vertical split
+(defun split-window-right-and-move ()
+  "Split the window vertically and move the cursor to the new window."
+  (interactive)
+  (split-window-right)
+  (other-window 1))
+
+(defun split-window-below-and-move ()
+  "Split the window horizontally and move the cursor to the new window."
+  (interactive)
+  (split-window-below)
+  (other-window 1))
+
+;; (global-set-key (kbd "M-\\") 'split-window-right)  ; Meta-\ for vertical split
+;; (global-set-key (kbd "M-|") 'split-window-below)  ; Meta-| for vertical split
+(global-set-key (kbd "M-\\") 'split-window-right-and-move)
+(global-set-key (kbd "M-|") 'split-window-below-and-move)
+
 
 (global-set-key (kbd "M-s") 'save-buffer)           ; Meta-s save
 (global-set-key (kbd "M-p") 'execute-extended-command) ; Meta-p commands

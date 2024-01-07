@@ -1,6 +1,8 @@
 # Emacs backup files
 *~
 
+.DS_Store
+
 icons
 *.png
 
