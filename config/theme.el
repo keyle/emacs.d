@@ -10,7 +10,7 @@
     ('dark (load-theme 'tango-dark t))))
 
 ;; Set font
-(set-frame-font "Zed Mono-17" nil t)
+(set-frame-font "JetBrains Mono-15" nil t)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;  Load theme ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

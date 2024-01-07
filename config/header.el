@@ -38,7 +38,7 @@
                            )
                 (with-face (file-name-nondirectory buffer-file-name)
                            :weight 'bold
-			   :foreground "#FFCD11"
+			   :foreground "#A9C49B"
                            ;; :background "DarkBlue"
                            )))))
 

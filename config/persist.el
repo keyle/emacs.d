@@ -22,7 +22,7 @@
 
 ;; only restore/reload history the buffer of the last X
 
-(setq desktop-restore-eager 7)
+(setq desktop-restore-eager 1)
 
 
 ;; restore window size onload

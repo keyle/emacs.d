@@ -1,3 +1,5 @@
+;;; controls
+
 (setq-default mac-command-modifier 'meta)
 (setq-default mac-option-modifier 'alt)
 
@@ -105,6 +107,7 @@
 (define-key lsp-mode-map (kbd "M-G") 'lsp-find-implementation) ; Meta-G for list implementations
 (global-set-key (kbd "M-r") 'lsp-rename)                        ; LSP rename
 
+(global-set-key (kbd "M-l") 'goto-line)
 
 (global-set-key (kbd "A-e") 'lsp-format-buffer)
 
@@ -165,6 +168,7 @@
 
 
 ;; comment
+
 (defun comment-region-or-line ()
   "Comment or uncomment the current region or line."
   (interactive)
@@ -352,5 +356,8 @@
 
 (global-set-key (kbd "M-P") 'open-projects)
 
+;; disable the closing with esc
+;; keyboard-escape-quit
+;; (global-set-key (kbd "ESC ESC ESC") 'ignore)
 
 
