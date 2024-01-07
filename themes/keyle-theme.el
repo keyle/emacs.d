@@ -6,7 +6,7 @@
 
 (deftheme keyle "DOCSTRING for keyle")
   (custom-theme-set-faces 'keyle
-   '(default ((t (:foreground "#eeeeee" :background "#181818" ))))
+   '(default ((t (:foreground "#d1d1d1" :background "#181818" ))))
    '(cursor ((t (:background "#fccf00" ))))
    '(fringe ((t (:background "#181818" ))))
    '(region ((t (:background "#505D4A" ))))
