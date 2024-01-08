@@ -1,5 +1,9 @@
 
-### .emacs
+### emacs.d
+
+My config and theme(s) for `emacs-plus` on multiple machines (macOS).
+
+### ~/.emacs
 
 ```
 (load "~/.emacs.d/config/main.el")
@@ -13,4 +17,7 @@ run command `Meta-x`
 
 otherwise `rg "\(require "` to get the list and package-install manually.
 
+### Icons
+
+`options -> show/hide -> toolbar`
 
