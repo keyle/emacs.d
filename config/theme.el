@@ -12,6 +12,7 @@
 ;; Set font
 (set-frame-font "JetBrains Mono-15" nil t)
 
+(set-variable 'frame-background-mode 'dark)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;  Load theme ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
