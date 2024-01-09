@@ -226,6 +226,10 @@
 (setq-default indent-tabs-mode nil)
 (setq tab-always-indent 'complete)
 
+;; Shift Tab
+
+(global-set-key (kbd "<S-tab>") 'backward-delete-char-untabify)
+
 
 
 (defun cut-region-or-line ()
