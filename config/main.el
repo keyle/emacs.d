@@ -1,5 +1,11 @@
 ;; (add-to-list 'default-frame-alist '(undecorated-round . t))
 
+;; start a macos App
+;; make an automator application
+;; run as shell
+;;       cd 
+;;       echo '/opt/homebrew/bin/emacs "$@"' | bash --login -s "$@"
+
 (delete-selection-mode 1) ; delete selection when I overwrite selection
 (setq ring-bell-function 'ignore) ; turn off beeps
 (setq make-backup-files nil) ; no backup file~
