@@ -298,7 +298,7 @@
 (global-set-key (kbd "M-R") 'counsel-git) ;; git files only - safer
 
 
-(global-set-key (kbd "<f6>") 'recompile)
+(global-set-key (kbd "<f5>") 'recompile)
 
 ;; (global-set-key (kbd "<f1>") 'imenu)
 ;; (global-set-key (kbd "<f6>") 'find-file-in-project)
@@ -393,5 +393,36 @@
 ;; disable the closing with esc
 ;; keyboard-escape-quit
 ;; (global-set-key (kbd "ESC ESC ESC") 'ignore)
+
+
+;; reverse text
+
+(defun reverse-region (start end)
+  "Reverse the selected region."
+  (interactive "r")
+  (let ((text (buffer-substring start end)))
+    (delete-region start end)
+    (insert (concat (reverse (string-to-list text))))))
+
+(global-set-key (kbd "M-5") 'reverse-region)
+
+
+;; prevent backspace from closing minibuffers and start erasing text
+
+(defun my-minibuffer-backspace ()
+  "Delete backwards or do nothing if at beginning of minibuffer."
+  (interactive)
+  (unless (bobp)  ; Check if beginning of buffer
+    (delete-backward-char 1)))
+
+
+(define-key minibuffer-local-map (kbd "DEL") 'my-minibuffer-backspace)
+(define-key minibuffer-local-ns-map (kbd "DEL") 'my-minibuffer-backspace)
+(define-key minibuffer-local-completion-map (kbd "DEL") 'my-minibuffer-backspace)
+(define-key minibuffer-local-must-match-map (kbd "DEL") 'my-minibuffer-backspace)
+(define-key minibuffer-local-isearch-map (kbd "DEL") 'my-minibuffer-backspace)
+
+;;; controls.el ends here
+
 
 

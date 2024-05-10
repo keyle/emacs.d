@@ -1,4 +1,5 @@
 ;; (add-to-list 'default-frame-alist '(undecorated-round . t))
+
 (delete-selection-mode 1) ; delete selection when I overwrite selection
 (setq ring-bell-function 'ignore) ; turn off beeps
 (setq make-backup-files nil) ; no backup file~
@@ -69,7 +70,7 @@
 
 ;; These is the default value, but I keep it here for visiibility.
 (setq spacious-padding-widths
-      '( :internal-border-width 35
+      '( :internal-border-width 55
          :header-line-width 4
          :mode-line-width 1
          :tab-width 4

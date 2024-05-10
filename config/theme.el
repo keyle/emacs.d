@@ -10,7 +10,7 @@
     ('dark (load-theme 'tango-dark t))))
 
 ;; Set font
-(set-frame-font "JetBrains Mono-15" nil t)
+(set-frame-font "JetBrains Mono-16" nil t)
 
 (set-variable 'frame-background-mode 'dark)
 
