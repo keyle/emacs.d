@@ -7,10 +7,12 @@
 	 (go-mode . lsp-deferred)        ; Add go-mode hook
          (php-mode . lsp-deferred)
          (python-mode . lsp-deferred)
-         (c++-mode . lsp-deferred))
+         (c++-mode . lsp-deferred)
+         (dart-mode . lsp-deferred))
   :config
     (setq lsp-intelephense-format-braces "k&r") ; lsp language specific settings
-)
+    (setq lsp-dart-sdk-dir "/Users/n/Code/flutter-sdk/flutter/bin/cache/dart-sdk"))
+
 
 ;; python LSP
 (use-package lsp-pyright
@@ -46,9 +48,9 @@
 
 ;; LSP Dart
 
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(package-initialize)
+;; (require 'package)
+;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+;; (package-initialize)
 
 (setq package-selected-packages 
   '(dart-mode lsp-mode lsp-dart lsp-treemacs flycheck company
