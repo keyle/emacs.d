@@ -11,7 +11,7 @@ My config and theme(s) for `emacs-plus` on multiple machines (macOS).
 
 ### Install packages
 
-run command `Meta-x` (alt+x)
+run command `Meta-x` (`alt+x` by default, `cmd+p` with my settings) 
 
 `package-install-selected-packages`
 
@@ -26,6 +26,9 @@ run command `Meta-x` (alt+x)
 
 scroll/pgdown to the needed one, click, <install>.
 
+### change the language.el details
+
+particularly the dart sdk
 
 ### Icons
 
