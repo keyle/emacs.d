@@ -34,12 +34,27 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; packages ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
  (require 'package)
- (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+ (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("gnu" . "https://elpa.gnu.org/packages/")))
  (package-initialize)
  
- (unless (package-installed-p 'use-package)
-   (package-refresh-contents)
-   (package-install 'use-package))
+;; Ensure use-package is installed
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; Install quelpa if not already installed
+(unless (package-installed-p 'quelpa)
+  (package-refresh-contents)
+  (package-install 'quelpa))
+
+;; Install quelpa-use-package if not already installed
+(unless (package-installed-p 'quelpa-use-package)
+  (package-refresh-contents)
+  (package-install 'quelpa-use-package))
+
+
+(require 'quelpa-use-package)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; paddings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'window-jump)
@@ -98,8 +113,6 @@
 (load "~/.emacs.d/config/theme.el")
 
 
-
-
 ;; Remap keys for macOS and mousewheel
 
 (load "~/.emacs.d/config/controls.el")
@@ -109,8 +122,16 @@
 
 (load "~/.emacs.d/config/persist.el")
 
+;; Copilot
+(load "~/.emacs.d/config/copilot.el")
+
+
 ;; Delay theme loading until after initialization
 (add-hook 'after-init-hook
           (lambda ()
             (load-theme 'keyle t)))
 
+;; Load theme after Emacs startup
+;; (add-hook 'emacs-startup-hook
+;;           (lambda ()
+            ;; (load-theme 'keyle t)))
