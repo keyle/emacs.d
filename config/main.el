@@ -107,3 +107,9 @@
 ;; Remember window size on quit
 
 (load "~/.emacs.d/config/persist.el")
+
+;; Delay theme loading until after initialization
+(add-hook 'after-init-hook
+          (lambda ()
+            (load-theme 'keyle t)))
+
