@@ -10,7 +10,8 @@
   (with-eval-after-load 'copilot
     (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
     (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion))
-  (add-to-list 'copilot-major-mode-alist '("enh-ruby" . "ruby"))
+  (add-to-list 'copilot-major-mode-alist '("enh-ruby" "ruby"))
+  (add-to-list 'copilot-major-mode-alist '("drift" "sql"))
   (add-to-list 'copilot-indentation-alist '(prog-mode 2))
   (add-to-list 'copilot-indentation-alist '(org-mode 2))
   (add-to-list 'copilot-indentation-alist '(text-mode 2))
