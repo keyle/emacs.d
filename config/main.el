@@ -41,6 +41,19 @@
    (package-refresh-contents)
    (package-install 'use-package))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; paddings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'window-jump)
+(require 'spacious-padding)
+
+;; These is the default value, but I keep it here for visibility.
+(setq spacious-padding-widths
+      '( :internal-border-width 55
+         :header-line-width 4
+         :mode-line-width 1
+         :tab-width 4
+         :right-divider-width 4
+         :scroll-bar-width 10))
+         
 ;; LSP
 
 (load "~/.emacs.d/config/languages.el")
@@ -70,18 +83,6 @@
 (use-package multiple-cursors
   :ensure t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; paddings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(require 'spacious-padding)
-
-;; These is the default value, but I keep it here for visiibility.
-(setq spacious-padding-widths
-      '( :internal-border-width 55
-         :header-line-width 4
-         :mode-line-width 1
-         :tab-width 4
-         :right-divider-width 4
-         :scroll-bar-width 10))
 
 ;; Read the doc string of `spacious-padding-subtle-mode-line' as it
 ;; is very flexible and provides several examples.

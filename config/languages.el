@@ -13,6 +13,9 @@
     (setq lsp-intelephense-format-braces "k&r") ; lsp language specific settings
     (setq lsp-dart-sdk-dir "/Users/n/Code/flutter-sdk/flutter/bin/cache/dart-sdk"))
 
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode)
 
 ;; python LSP
 (use-package lsp-pyright
@@ -20,7 +23,6 @@
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
                           (lsp))))  ; or lsp-deferred
-
 
 (use-package go-mode
   :ensure t)
