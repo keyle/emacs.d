@@ -11,6 +11,7 @@
 
 ;; Set font
 (set-frame-font "JetBrains Mono-16" nil t)
+(setq-default line-spacing 0.25)
 
 (set-variable 'frame-background-mode 'dark)
 
