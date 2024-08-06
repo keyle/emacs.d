@@ -50,14 +50,14 @@
 
 ;; LSP Dart
 
-;; (require 'package)
-;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-;; (package-initialize)
-
 (setq package-selected-packages 
   '(dart-mode lsp-mode lsp-dart lsp-treemacs flycheck company
     ;; Optional packages
     lsp-ui company hover))
+
+;;; Add SQL syntax highlighting for .drift files
+(add-to-list 'auto-mode-alist '("\\.drift\\'" . sql-mode))
+
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)

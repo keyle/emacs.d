@@ -19,9 +19,9 @@
    '(font-lock-type-face ((t (:foreground "#d2c19f" ))))
    '(font-lock-constant-face ((t (:foreground "#d2c19f" ))))
    '(font-lock-variable-name-face ((t (:foreground "#9BC4B4" ))))
-   '(minibuffer-prompt ((t (:foreground "#b8bb26" :bold t ))))
-   '(mode-line ((t (:foreground "#333333" :background "#928771" ))))
-   '(mode-line-inactive ((t (:foreground "#929292" :background "#383838" ))))
+   '(minibuffer-prompt ((t (:foreground "#b8bb26" :bold t )))) 
+   '(mode-line ((t (:foreground "#6b6b6b" :background "#3a3a3a" ))))  ;; Dimmer appearance for active mode-line
+   '(mode-line-inactive ((t (:foreground "#515151" :background "#2a2a2a" ))))  ;; Even dimmer for inactive mode-line
    '(font-lock-warning-face ((t (:foreground "cyan" :bold t ))))
    )
 
