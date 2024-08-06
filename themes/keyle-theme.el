@@ -20,7 +20,7 @@
    '(font-lock-constant-face ((t (:foreground "#d2c19f" ))))
    '(font-lock-variable-name-face ((t (:foreground "#9BC4B4" ))))
    '(minibuffer-prompt ((t (:foreground "#b8bb26" :bold t ))))
-   '(mode-line ((t (:foreground "#151515" :background "#928771" ))))
+   '(mode-line ((t (:foreground "#333333" :background "#928771" ))))
    '(font-lock-warning-face ((t (:foreground "cyan" :bold t ))))
    )
 
