@@ -30,6 +30,8 @@
 ;; turn off scroll bars
 (scroll-bar-mode -1)
 
+(setq auto-save-file-name-transforms
+      `((".*" "~/.emacs.d/auto-saves/" t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; packages ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

@@ -55,6 +55,10 @@
     ;; Optional packages
     lsp-ui company hover))
 
+;; Set the fill column to a large number to avoid line wrapping
+(setq-default fill-column 220)
+(setq-default lsp-dart-line-length 220)
+
 ;;; Add SQL syntax highlighting for .drift files
 (add-to-list 'auto-mode-alist '("\\.drift\\'" . sql-mode))
 

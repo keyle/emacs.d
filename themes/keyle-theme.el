@@ -22,12 +22,13 @@
    '(font-lock-variable-name-face ((t (:foreground "#9BC4B4" ))))
    '(lsp-face-highlight-textual ((t (:background "#37474F" :foreground nil :bold t)))) ; highlighting by lsp
    '(minibuffer-prompt ((t (:foreground "#b8bb26" :bold t ))))
-   '(mode-line ((t (:background "#649a93" :foreground "#fcfcfc"))))
-   ;'(mode-line-inactive ((t (:foreground "#6b6b6b" :background "#ffcd11" ))))
+   '(mode-line ((t (:foreground "#444444"))))
+   '(mode-line-active ((t (:foreground "#999999"))))
+   '(mode-line-inactive ((t (:foreground "#444444"))))
    '(mode-line-highlight ((t (:foreground "#b8bb26" :bold t ))))
    '(mode-line-buffer-id ((t (:foreground "#A9C49B" :bold t ))))
    '(mode-line-emphasis ((t (:foreground "#b8bb26" :bold t ))))
-   '(font-lock-warning-face ((t (:foreground "#ffcd11" :bold t ))))
+   ;'(font-lock-warning-face ((t (:foreground "#ffcd11" :bold t ))))
 
    ;; flycheck
    ;'(flycheck-error ((t (:underline (:style wave :color "#ffcd11")))))
