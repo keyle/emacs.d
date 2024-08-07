@@ -102,13 +102,19 @@
 
 (global-set-key (kbd "M-s") 'save-buffer)           ; Meta-s save
 (global-set-key (kbd "M-p") 'execute-extended-command) ; Meta-p commands
+(global-set-key (kbd "C-SPC") 'lsp-execute-code-action)    ; Control-SPC execute code action
+(global-set-key (kbd "M-`") 'lsp-execute-code-action)    ; Meta-` execute code action
 (global-set-key (kbd "<end>") 'move-end-of-line)
 (global-set-key (kbd "<home>") 'move-beginning-of-line)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
-
+(global-set-key (kbd "M-<left>") 'beginning-of-line)
+(global-set-key (kbd "M-<right>") 'end-of-line)
+(global-set-key (kbd "M-Y") 'vc-annotate) ; Meta-Y for git blame
 
 (define-key lsp-mode-map (kbd "M-g") 'lsp-find-definition)     ; Meta-g for go to definition
-(define-key lsp-mode-map (kbd "M-G") 'lsp-find-implementation) ; Meta-G for list implementations
+;(define-key lsp-mode-map (kbd "M-G") 'lsp-find-implementation) ; Meta-G for list implementations
+(define-key lsp-mode-map (kbd "M-G") 'lsp-find-references) ; Meta-G for list implementations
+
 (global-set-key (kbd "M-r") 'lsp-rename)                        ; LSP rename
 
 (global-set-key (kbd "M-l") 'goto-line)

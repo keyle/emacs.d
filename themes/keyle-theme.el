@@ -1,3 +1,4 @@
+
 ;;; keyle-theme.el --- keyle
 ;;; Version: 1.0
 ;;; Generated with https://emacsfodder.github.io/emacs-theme-editor/
@@ -19,10 +20,23 @@
    '(font-lock-type-face ((t (:foreground "#d2c19f" ))))
    '(font-lock-constant-face ((t (:foreground "#d2c19f" ))))
    '(font-lock-variable-name-face ((t (:foreground "#9BC4B4" ))))
-   '(minibuffer-prompt ((t (:foreground "#b8bb26" :bold t )))) 
-   '(mode-line ((t (:foreground "#6b6b6b" :background "#3a3a3a" ))))  ;; Dimmer appearance for active mode-line
-   '(mode-line-inactive ((t (:foreground "#515151" :background "#2a2a2a" ))))  ;; Even dimmer for inactive mode-line
-   '(font-lock-warning-face ((t (:foreground "cyan" :bold t ))))
+   '(lsp-face-highlight-textual ((t (:background "#37474F" :foreground nil :bold t)))) ; highlighting by lsp
+   '(minibuffer-prompt ((t (:foreground "#b8bb26" :bold t ))))
+   '(mode-line ((t (:background "#649a93" :foreground "#fcfcfc"))))
+   ;'(mode-line-inactive ((t (:foreground "#6b6b6b" :background "#ffcd11" ))))
+   '(mode-line-highlight ((t (:foreground "#b8bb26" :bold t ))))
+   '(mode-line-buffer-id ((t (:foreground "#A9C49B" :bold t ))))
+   '(mode-line-emphasis ((t (:foreground "#b8bb26" :bold t ))))
+   '(font-lock-warning-face ((t (:foreground "#ffcd11" :bold t ))))
+
+   ;; flycheck
+   ;'(flycheck-error ((t (:underline (:style wave :color "#ffcd11")))))
+   ;'(flycheck-warning ((t (:underline (:style wave :color "#ffcd11")))))
+   '(flycheck-info ((t (:underline (:style wave :color "#649a93")))))
+
+   ;; line number
+   '(line-number ((t (:foreground "#444444" :background "#181818" ))))
+   '(line-number-current-line ((t (:foreground "#d2c19f" :background "#181818" ))))
    )
 
 ;;;###autoload

@@ -25,7 +25,7 @@
 (desktop-save-mode 1)
 
 ;; enable line numbers in programming modes
-;; (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; turn off scroll bars
 (scroll-bar-mode -1)
@@ -62,7 +62,7 @@
 
 ;; These is the default value, but I keep it here for visibility.
 (setq spacious-padding-widths
-      '( :internal-border-width 55
+      '( :internal-border-width 50
          :header-line-width 4
          :mode-line-width 1
          :tab-width 4
@@ -131,7 +131,3 @@
           (lambda ()
             (load-theme 'keyle t)))
 
-;; Load theme after Emacs startup
-;; (add-hook 'emacs-startup-hook
-;;           (lambda ()
-            ;; (load-theme 'keyle t)))
